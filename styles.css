@@ -1,0 +1,481 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+   background: linear-gradient(180deg, #000 0%, #111 100%);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+} 
+
+
+/* Menu */
+.menu-horizontal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Hero / imagem de fundo */
+.hero {
+  height: 100vh;
+  background: url("img/banner.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 120px;
+  text-align: left;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;           /* fundo transparente */
+  color: white;                      /* cor do texto */
+  border: 2px solid white;           /* borda branca */
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+.content {
+  text-align: center;
+}
+
+/* Seção de serviços */
+.servicos {
+  background: linear-gradient(to bottom, #111, #222);
+  padding: 50px 20px;
+  color: white;
+  text-align: center;
+}
+
+.titulo-secao {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.titulo-secao span {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.cards-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.texto-sobreposto {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.card:hover .texto-sobreposto {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.sobre-nos {
+  background: #000;
+  color: white;
+  padding: 80px 20px;
+}
+
+.container-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.texto-sobre {
+  flex: 1;
+  padding: 20px 40px;
+  min-width: 300px;
+}
+
+.texto-sobre h3 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.texto-sobre h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.texto-sobre p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.botao-sobre {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.botao-sobre:hover {
+  background: white;
+  color: black;
+}
+
+.imagem-sobre {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.imagem-sobre img {
+  width: auto;
+  height: 700px;         /* define a altura fixa */
+  aspect-ratio: 1 / 1;   /* mantém proporção quadrada */
+  object-fit: cover;     /* corta para caber no espaço */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Estilo da seção de depoimentos */
+.depoimentos {
+  position: relative;
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Cada depoimento individual */
+.depoimento {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Depoimento ativo */
+.depoimento.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Título do depoimento */
+.depoimento h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f0f0f0;
+}
+
+/* Texto do depoimento */
+.depoimento p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Controles (bolinhas) abaixo dos depoimentos */
+.depoimentos .controles {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Estilo das bolinhas */
+.depoimentos .bolinha {
+  width: 10px;
+  height: 10px;
+  background-color: #888;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Bolinha ativa */
+.depoimentos .bolinha.ativa {
+  background-color: #fff;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  .depoimentos {
+    padding: 30px 20px;
+  }
+
+  .depoimento h3 {
+    font-size: 1.2rem;
+  }
+
+  .depoimento p {
+    font-size: 1rem;
+  }
+}
+
+
+.equipe {
+  margin-top: 50px;
+  text-align: center;
+   margin-top: 150px;
+  margin-bottom: 200px; /* Espaço abaixo */
+}
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.membro {
+  text-align: center;
+}
+
+.membro img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 10px;
+}
+
+.membro h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.membro p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.contato-container {
+  margin-left: 200px;
+  padding: 40px;
+  color: white;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.contato-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contato-header p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.contato-conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+.contato-form,
+.contato-info {
+  flex: 1 1 400px;
+}
+
+.contato-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contato-form form input,
+.contato-form form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 20px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+.contato-form button {
+  padding: 12px;
+  background-color: #00bfa6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contato-form button:hover {
+  background-color: #008f7a;
+}
+
+.contato-info {
+  flex: 1 1 300px;
+}
+
+.contato-info h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.contato-info p {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
